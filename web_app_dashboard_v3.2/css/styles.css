@@ -6,7 +6,8 @@ svg, {
 }
 
 img {
-    max-width: 100%;
+    max-width:  30px;
+    max-height: 30px                                                                                            A;
 }
 .grid-container {
     display:grid;
