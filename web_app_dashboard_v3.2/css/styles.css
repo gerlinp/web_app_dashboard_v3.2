@@ -1,9 +1,12 @@
 * {
-    /* background-color: #2f2f2f; */
     color: white
 }
 
 
+body {
+    background-color: #1f1f1f;
+    margin: 0 auto;
+}
 .ele {
     background-color: lightgreen;
     padding: 20px;
@@ -21,15 +24,28 @@ svg {
 }
 
 .header {
-    background-color: #1f1f1f;
+    background-color: #2f2f2f;
     padding: 0.5rem;
     width: 100%;
     margin: 0px;
     display: grid;
     gap: 0.5rem;
     grid-template-columns: 4;
+    grid-template-areas: "title" "bell" "profilePicture" "studentName";
 }
 
+#title {
+    grid-area: title;
+}
+.bell {
+   grid-area: bell; 
+}
+#profilePicture {
+    grid-area: profilePicture;
+}
+#studentName {
+    grid-area: studentName;
+}
 .nav {
     background-color: lightseagreen;
 }
