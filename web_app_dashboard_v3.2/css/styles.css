@@ -1,64 +1,47 @@
-
-
-svg, {
-    max-width: 20px;
-    max-height: 20px;
+* {
+    /* background-color: #2f2f2f; */
+    color: white
 }
 
-img {
-    max-width:  30px;
-    max-height: 30px                                                                                            A;
+
+.ele {
+    background-color: lightgreen;
+    padding: 20px;
+    margin: 20px;
 }
-.grid-container {
-    display:grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "header"
-        "navigation"
-        "main";
+
+.div {
+    /* background-color:  */
+    padding: 20px;
+    margin: 20px;
+}
+
+svg {
+    fill:  #bb86fc;  
 }
 
 .header {
-    grid-area: header;
+    background-color: #1f1f1f;
+    padding: 0.5rem;
+    width: 100%;
+    margin: 0px;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 4;
 }
 
-.navigation {
-    grid-area: navigation;
+.nav {
+    background-color: lightseagreen;
 }
 
 .main {
-    grid-area: main;
-    display: grid;
+    background-color: lightcoral;
 }
 
-.widget-container-full, .widget-container-half {
-    width: 95vw;
+.icon {
+    max-width: 60px;
 }
 
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: 55px 1fr;
-        grid-template-areas: 
-        "header header"
-        "navigation main";
-    }
-    .main {
-        grid-template-columns: 50%;
-    }
-    .traffic, .social {
-        grid-column: 1 /span 2;
-    }
-    .daily,.members, .message {
-        grid-column: 1 /span 1;
-    }
-    .mobile, .activity, .settings {
-        grid-column: 2 / span 1;
-    }
-    .widget-container-full{
-        width:90vw;
-    }
-    .widget-container-half {
-        width: 45vw;
-    }
+#profile {
+    grid-area: profile ;
 }
