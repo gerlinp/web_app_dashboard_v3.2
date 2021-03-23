@@ -20,7 +20,8 @@ body {
 }
 
 svg {
-    fill:  #bb86fc;  
+    fill:  #bb86fc; 
+    max-height: 70px; 
 }
 
 .header {
