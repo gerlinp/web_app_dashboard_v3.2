@@ -1,24 +1,12 @@
 /* >>>>>>>>>BASE STYLES >>>>>>>>>>*/
 
 * {
-    color: white
+    color: white;
+    list-style-type: none;
+    text-align: center;
 }
-
-
 body {
     background-color: #1f1f1f;
-    margin: 0 auto;
-}
-.ele {
-    background-color: lightgreen;
-    padding: 20px;
-    margin: 20px;
-}
-
-.div {
-    /* background-color:  */
-    padding: 20px;
-    margin: 20px;
 }
 
 svg {
@@ -37,6 +25,10 @@ svg {
     grid-template-areas: "title" "bell" "profilePicture" "studentName";
 }
 
+.icon {
+    max-width: 60px;
+}
+
 #title {
     grid-area: title;
 }
@@ -49,18 +41,10 @@ svg {
 #studentName {
     grid-area: studentName;
 }
-.nav {
-    background-color: lightseagreen;
-}
-
-.main {
-    background-color: lightcoral;
-}
-
-.icon {
-    max-width: 60px;
-}
 
 #profile {
     grid-area: profile ;
 }
+
+
+
