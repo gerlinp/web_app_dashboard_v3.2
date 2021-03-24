@@ -1,5 +1,4 @@
-/* >>>>>>>>>BASE STYLES >>>>>>>>>>*/
-
+/* -----------BASE STYLES -----------*/
 * {
     color: #fff;
     list-style-type: none;
@@ -8,12 +7,10 @@
 body {
     background-color: #1f1f1f;
 }
-
 svg {
     fill:  #bb86fc; 
     max-height: 70px; 
 }
-
 .header {
     background-color: #2f2f2f;
     padding: 0.5rem;
@@ -21,14 +18,12 @@ svg {
     margin: 0px;
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: 4;
+    /* grid-template-columns: 4; */
     grid-template-areas: "title" "bell" "profilePicture" "studentName";
 }
-
 .icon {
     max-width: 60px;
 }
-
 #title {
     grid-area: title;
 }
@@ -41,10 +36,53 @@ svg {
 #studentName {
     grid-area: studentName;
 }
-
 #profile {
     grid-area: profile ;
 }
-
-
-
+/* --------- TOGGLE SWTICHES ---------*/
+.onoffswitch {
+    position: relative; width: 200px;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 50px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 63px; padding: 0; line-height: 63px;
+    font-size: 40px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 5px;
+    background-color: #BB86FC; color: #2F2F2F;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 5px;
+    background-color: #2F2F2F; color: #BB86FC;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 50px; margin: 6.5px;
+    background: #2F2F2F;
+    position: absolute; top: 0; bottom: 0;
+    right: 133px;
+    border: 2px solid #999999; border-radius: 50px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
