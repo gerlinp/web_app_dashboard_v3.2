@@ -1,44 +1,153 @@
 /* -----------BASE STYLES -----------*/
 * {
+    box-sizing: border-box;
     color: #fff;
     list-style-type: none;
     text-align: center;
 }
-body {
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header"
+    "navigation"
+    "main";
     background-color: #1f1f1f;
 }
+
+.header {
+    grid-area: header;
+    background-color: #2f2f2f;
+    padding: 40px 10px; 
+    font-size: x-large;
+}
+
+.navigation ul{
+    background-color: black;
+    padding: 30px 100px;   
+}
+
+.header, 
+.navigation ul {
+    display: flex;
+    margin: 0 auto;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+
+.navigation {
+    grid-area: navigation
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+}
+
+.widget-container-full, .widget-container-half {
+    width: 95vw;
+}
+
+.alert {
+    background-color: #bb86fc;
+    padding: 1px;
+}
+
 svg {
     fill:  #bb86fc; 
+    max-height: 200px; 
+    max-width: 200px;
+}
+
+svg:hover {
+    fill: #ddc3fe;
+}
+
+
+.icon {
     max-height: 70px; 
 }
-.header {
-    background-color: #2f2f2f;
-    padding: 0.5rem;
-    width: 100%;
-    margin: 0px;
-    display: grid;
-    gap: 0.5rem;
-    /* grid-template-columns: 4; */
-    grid-template-areas: "title" "bell" "profilePicture" "studentName";
+
+.profile-image {
+    border-radius: 100%;
+    height: 100px;
 }
-.icon {
-    max-width: 60px;
+
+#profile-picture img {
+    border-left: solid 5px red;
 }
-#title {
-    grid-area: title;
+
+.vl {
+    border-left: 1px solid #bb86fc;
+    height: 110px;
 }
-.bell {
-   grid-area: bell; 
-}
-#profilePicture {
-    grid-area: profilePicture;
-}
-#studentName {
-    grid-area: studentName;
-}
-#profile {
-    grid-area: profile ;
-}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    padding-bottom: ;
+  }
+  
+  .bell {
+    position: relative;
+    display: inline-block;
+  }
+
+  .bell .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 5px 10px;
+
+    background: green;
+    color: white;
+
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+
+
+
+/* -----------MEDIA QUERY -----------*/
+
+/* @media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+        "header header"
+        "navigation main";
+    }
+    .main {
+        grid-template-columns: 50%;
+    }
+    .traffic, .social {
+        grid-column: 1 / span 2;
+    }
+    .daily, 
+    .members, 
+    .message {
+        grid-column: 1 /span 1;
+    }
+    .mobile, .activity, .settings {
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full {
+        width: 90vw;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+} */
 /* --------- TOGGLE SWTICHES ---------*/
 .onoffswitch {
     position: relative; width: 200px;
@@ -86,3 +195,6 @@ svg {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px; 
 }
+
+
+
