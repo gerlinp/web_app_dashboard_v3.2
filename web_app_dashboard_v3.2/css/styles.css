@@ -46,6 +46,14 @@
     grid-area: navigation
 }
 
+.headline {
+    float: left;
+    font-size: large;
+}
+
+.main-header-search {width: 100%;
+
+}
 .main {
     grid-area: main;
     display: grid;
