@@ -7,6 +7,7 @@
     font-family: 'Quicksand', sans-serif;
     font-size: small;
     font-weight: light;
+
 }
 
 
@@ -69,6 +70,9 @@ grid-area: search;
 .main {
     grid-area: main;
     display: grid;
+    width: 90%;
+    margin: 0 auto;
+
 }
 
 .widget-container-full, .widget-container-half {
@@ -78,9 +82,10 @@ grid-area: search;
 .alert {
     background-color: #bb86fc;
     padding: 1px;
-    width:90%
     font-size: xx-small;
-    border-radius: 10%;
+    width: 80%;
+    margin: 0 auto;
+
 }
 
 svg {
