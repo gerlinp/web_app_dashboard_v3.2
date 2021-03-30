@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web App</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  </head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
 <body class="grid-container">
     <div>
@@ -85,12 +86,26 @@
                 <div class="traffic-header">
                     <h3>Traffic</h3>
                     <ul class="traffic-nav">
-                        <li class="traffic-nav-link">Hourly</li>
-                        <li class="traffic-nav-link">Daily</li>
-                        <li class="traffic-nav-link active">Weekly</li>
-                        <li class="traffic-nav-link">Monthly</li>
+                        <fieldset>
+                            <div class="switch-toggle switch-candy">
+                              <input id="hour" name="view" type="radio" checked>
+                              <label for="hour" onclick="">Hourly</label>
+                          
+                              <input id="day" name="view" type="radio">
+                              <label for="day" onclick="">Daily</label>
+                          
+                              <input id="week" name="view" type="radio">
+                              <label for="week" onclick="">Weekly</label>
+        
+                              <input id="month" name="view" type="radio">
+                              <label for="month" onclick="">Monthly</label>
+                          
+                              <a></a>
+                            </div>
+                          </fieldset>
                     </ul>
                 </div>
+
                 <div class="widget-container-full">
                     <!-- line graph -->
                     <canvas id="trafficChart"></canvas>
@@ -125,8 +140,8 @@
                         </svg>
                     </div>
                     <div class="social-text">
-                        <p>Facebook</p>
-                        <p>10,320</p>
+                        <p class="social">Facebook</p>
+                        <p class="number">10,320</p>
                     </div>
                 </div>
                 <div class="social-container">
@@ -136,8 +151,8 @@
                           </svg>
                     </div>
                     <div class="social-text">
-                        <p>Instagram</p>
-                        <p>16,445</p>
+                        <p class="social">Instagram</p>
+                        <p class="number">16,445</p>
                     </div>
                 </div>
 
@@ -148,8 +163,8 @@
                           </svg>
                     </div>
                     <div class="social-text">
-                        <p>Twitter</p>
-                        <p>10,320</p>
+                        <p class="social">Twitter</p>
+                        <p class="number">10,320</p>
                     </div>
                 </div>
             </section>
