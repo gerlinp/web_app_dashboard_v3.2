@@ -1,7 +1,8 @@
+/* --------BASE STYLES-------- */
+
 * {
     text-decoration: none;
     list-style-type: none;
-
 }
 header {
     background: #7477bf;
@@ -25,10 +26,6 @@ section {
     background: lightgray;
 }
 
-canvas {
-    background: lightblue;
-}
-
 .form-field,
 .form-area,
 .button-primary,
@@ -50,11 +47,66 @@ canvas {
     color: white;
 }
 
-#cancel {
-
-}
 #save,
 #cancel {
     width: 45%;
 }
 
+
+/* ----------------LAYOUT-------------- */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main";
+}
+
+.widget-container-full, .widget-container-half {
+    width: 95vw;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+
+/* ----------------MEDIA QUERY-------------- */
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+        "header header"
+        "nav main";
+    }
+    main {
+        grid-template-columns: 50%;
+    }
+    .traffic, .social {
+        grid-column: 1 / span 2;
+    }
+    .daily, .members, .message {
+        grid-column:  1 / span 1;
+    }
+    .mobile, .activity, .settings {
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full{
+        width: 90vw;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+}
