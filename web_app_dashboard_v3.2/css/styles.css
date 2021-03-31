@@ -4,13 +4,20 @@
     text-decoration: none;
     list-style-type: none;
 }
-header {
+header,
+#alert {
     background: #7477bf;
     color: white;
 }
 
 nav {
     background: #4d4c72;
+}
+
+#alert {
+    width: 90%;
+    border-radius: 5px;
+    height: 40px;
 }
 svg {
     width: 30px;
