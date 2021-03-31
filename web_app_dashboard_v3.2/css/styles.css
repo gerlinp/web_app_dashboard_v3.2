@@ -1,0 +1,60 @@
+* {
+    text-decoration: none;
+    list-style-type: none;
+
+}
+header {
+    background: #7477bf;
+    color: white;
+}
+
+nav {
+    background: #4d4c72;
+}
+svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+section {
+    border-bottom: solid 1px black;
+}
+
+.social-container {
+    background: lightgray;
+}
+
+canvas {
+    background: lightblue;
+}
+
+.form-field,
+.form-area,
+.button-primary,
+#cancel,
+#send {
+    background: lightgray;
+    width: 90%;
+    margin: 5px;
+    height: 50px;
+    border-radius: 6px;
+}
+.form-area {
+    height: 150px;
+}
+
+.button-primary,
+#send {
+    background-color: #7477bf;
+    color: white;
+}
+
+#cancel {
+
+}
+#save,
+#cancel {
+    width: 45%;
+}
+
