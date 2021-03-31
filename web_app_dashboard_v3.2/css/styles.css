@@ -3,6 +3,7 @@
 * {
     text-decoration: none;
     list-style-type: none;
+    text-align: center;
 }
 header,
 #alert {
@@ -59,6 +60,9 @@ section {
     width: 45%;
 }
 
+img {
+    border-radius: 100%;
+}
 
 /* ----------------LAYOUT-------------- */
 
