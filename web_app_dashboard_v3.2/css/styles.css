@@ -1,21 +1,30 @@
 
 
-body {
+body,
+.header,
+.nav,
+.main {
     display: grid;
 }
 
 .header {
-    background: lightpink;    
+    background: lightpink;
+    grid-area: header;    
 }
 
 .nav {
-    background: lightseagreen
+    background: lightseagreen;
+    grid-area: nav;
 }
 
 .main {
     background: lightcoral;
+    grid-area: main;
 }
 
+img {
+    border-radius: 100%;
+}
 
 svg {
     height: 30px;
