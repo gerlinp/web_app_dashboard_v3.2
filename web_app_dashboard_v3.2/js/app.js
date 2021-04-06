@@ -1,6 +1,7 @@
 const alertBanner = document.querySelector('#alert');
 const trafficCanvas = document.querySelector('#traffic-chart')
 const dailyCanvas = document.querySelector('#daily-chart')
+const mobileCanvas = document.querySelector('#mobile-chart')
 
 alertBanner.innerHTML =
 `
@@ -22,8 +23,9 @@ let trafficData = {
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
     2500],
     fill: true,
-        backgroundColor: '#bb86fc',
-        borderWidth: 1,
+    backgroundColor: '#bb86fc',
+    borderWidth: 1,
+
     }]
 };
 
@@ -80,6 +82,36 @@ let dailyChart = new Chart(dailyCanvas, {
     options: dailyOptions
 });
 
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phons"],
+    datasets: [{
+        label: '# of Users',
+        data: [2000, 550, 500],
+        borderWidth: 0,
+        backgroundColor: [
+            '#7477BF',
+            '#78CF82',
+            '#51B6C8'
+        ]
+    }]
+};
+
+const mobileOptions = {
+    legend: {
+        position: 'right',
+        labels: {
+            boxwidth: 20,
+            fontStyle: 'bold'
+        }
+    }
+};
+
+let mobileChart = new Chart(mobileCanvas,  {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+
+});
 
     
     
