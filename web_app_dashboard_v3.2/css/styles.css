@@ -57,10 +57,14 @@ header h3 {
 .main {
     grid-area: main;
     display: grid;
+    grid-template-areas: 
+    ""
+    ""
+    "";
 }
 
 .main-header {
-    display: inline-flex;
+    display: flex;
     justify-content: space-evenly;
 }
 .main-header-search,
@@ -124,6 +128,7 @@ img {
     }
     .widget-container-full {
         width: 90vw;
+        margin: 0 autos;
     }
         .widget-container-half {
         width: 45vw;
@@ -151,3 +156,9 @@ img {
     }
     
 }
+
+/* canvas {
+    background: #2e2e2e;
+    margin: 0 auto;
+    justify-content: center;
+} */

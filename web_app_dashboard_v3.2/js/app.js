@@ -21,7 +21,8 @@ let trafficData = {
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
     2500],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
+    fill: true,
+        backgroundColor: '#bb86fc',
         borderWidth: 1,
     }]
 };
@@ -29,7 +30,7 @@ let trafficData = {
 let trafficOptions = {
     aspectRatio: 2.5,
     animation: {
-        duration: 0
+        duration: 5
     },
     scales: {
         yAxes: [{
@@ -43,11 +44,41 @@ let trafficOptions = {
     }
 };
 
+
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficData,
     options: trafficOptions
-    });
+});
+
+const dailyData = {
+    labels: ["S", "M", "T", "W" , "T", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: '#bb86fc',
+        borderWidth: 1
+    }]
+};
+
+const dailyOptions = {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero:true
+            }
+        }]
+    },
+    legend: {
+        display: false
+    }
+}
+
+let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
+});
 
 
     
