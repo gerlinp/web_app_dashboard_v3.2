@@ -75,9 +75,12 @@ let trafficOptions = {
             }
         }]
     },
-    legend : {
-        display: false
+    plugins: {
+        legend : {
+            display: false
+        }
     }
+    
 };
 
 
@@ -93,10 +96,9 @@ let trafficChart = new Chart(trafficCanvas, {
 //     checkRadioButtons
 //     return checked
     
-traffic.addEventListener('click', e =>  {
-    let chart = e.target.innerHTML;
-    console.log(chart);    
-});
+// traffic.addEventListener('click', e =>  {
+//     if (Object.is(hour) )   
+// });
 
 
 //-------------- Daily Chart---------------//
@@ -118,8 +120,10 @@ const dailyOptions = {
             }
         }]
     },
-    legend: {
-        display: false
+    plugins: {
+        legend : {
+            display: false
+        }
     }
 }
 
@@ -146,13 +150,15 @@ const mobileData = {
 };
 
 const mobileOptions = {
-    legend: {
-        position: 'bottom',
-        labels: {
-            fontColor: "white",
-            boxWidth: 20,
-            padding: 20
-        }
+    plugins: {
+        legend: {
+            position: 'right',
+            labels: {
+                fontColor: "white",
+                boxWidth: 20,
+                padding: 20
+            }
+        } 
     }
 }
 
