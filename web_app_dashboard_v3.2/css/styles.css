@@ -91,7 +91,9 @@ header h3 {
 
 .widget-container-full, .widget-container-half {
     width: 95vw;
-    }
+}
+
+
     
 svg {
     height: 30px;
@@ -102,6 +104,9 @@ img {
     max-height: 50px;
 }
 
+canvas {
+    background: #1e1e1e;
+}
 
 
 
@@ -115,6 +120,7 @@ img {
 
     .main {
         grid-template-columns: 50%;
+        font-size: large ;
 
     }
     .traffic, .social {
@@ -156,3 +162,5 @@ img {
     }
     
 }
+
+

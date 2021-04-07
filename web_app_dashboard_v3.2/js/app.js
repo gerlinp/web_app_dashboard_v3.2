@@ -3,6 +3,7 @@ const trafficCanvas = document.querySelector('#traffic-chart')
 const dailyCanvas = document.querySelector('#daily-chart')
 const mobileCanvas = document.querySelector('#mobile-chart')
 
+
 alertBanner.innerHTML =
 `
 <div class="alert-banner">
@@ -31,6 +32,7 @@ let trafficData = {
 
 let trafficOptions = {
     aspectRatio: 2.5,
+    responsive: true,
     animation: {
         duration: 5
     },
@@ -104,13 +106,12 @@ const mobileOptions = {
             fontStyle: 'bold'
         }
     }
-};
+}
 
 let mobileChart = new Chart(mobileCanvas,  {
     type: 'doughnut',
     data: mobileData,
     options: mobileOptions
-
 });
 
     
