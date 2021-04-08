@@ -4,6 +4,10 @@ html,
     text-decoration: none;
     list-style-type: none;
 }
+
+html {
+    width: 100%
+}
 body {
     background: #121212;
     color: rgba(255, 255, 255, .87);
@@ -36,7 +40,7 @@ ul {
     justify-content: space-evenly;
     padding: 10px;
     margin: 0 auto;
-    align-items: center;
+
 }
 header #bell,
 header h3 {
@@ -111,8 +115,11 @@ header h3 {
 
 
 
-.widget-container-full, .widget-container-half {
-    width: 95vw;
+.widget-container-full div, .widget-container-half div {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    align-self: center;
 }
 
 svg {
@@ -129,6 +136,7 @@ section {
     margin: 10px;
     border-radius: 20px;
 }
+
 
 .traffic-header h3,
 .daily h3,
