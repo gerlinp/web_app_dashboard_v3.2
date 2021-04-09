@@ -1,5 +1,6 @@
 const alertBanner = document.querySelector('#alert');
 const notification = document.querySelector('#notification')
+const closeButton = [alertBanner, notification];
 const trafficCanvas = document.querySelector('#traffic-chart')
 const dailyCanvas = document.querySelector('#daily-chart')
 const mobileCanvas = document.querySelector('#mobile-chart')
@@ -13,10 +14,10 @@ function close(btn) {
     }
 } 
 
-//-------------- ALERT BANNER---------------//
+//-------------- Alert-Banner & Notification---------------//
 alertBanner.innerHTML = `
     <div class="alert-banner">
-    <p><strong>Alert:</strong> You have overdue tasks to complete </p> <p class="alert-banner-close">X</p>
+    <p><strong>Alert:</strong> You have overdue tasks to complete </p> <p class="clsBtn">X</p>
     </div>
 `;
 
@@ -29,17 +30,18 @@ notification.innerHTML = `
 `;
 
 
-
-alertBanner.addEventListener('click', e => {
-    const element = e.target;
-    if (element.classList.contains("alert-banner-close")) {
-    alertBanner.style.display = "none"
+// remove notification event Listener
+closeButton.forEach(item => {
+    item.addEventListener('click', e => {
+        if(e.target.className === 'clsBtn'){   
+            let parentEl = e.target.parentElement; 
+        
+            parentEl.style.display = "none";
+            
     }
 });
-
-notification.addEventListener('click', e => {
-    close(e.target)
-});
+}
+);
 
 
 
@@ -175,6 +177,7 @@ const mobileData = {
 };
 
 const mobileOptions = {
+    maintainAspectRatio: false,
     plugins: {
         legend: {
             position: 'right',
