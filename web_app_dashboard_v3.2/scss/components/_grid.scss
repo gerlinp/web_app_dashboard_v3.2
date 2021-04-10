@@ -1,0 +1,40 @@
+/* ============================================= */
+/*                 Main Layout                   */
+/* ============================================= */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:"header"
+                        "navigation"
+                        "main";
+}
+
+.header {
+    grid-area: header;
+    display:flex;
+    align-items: center;
+}
+
+.navigation {
+    grid-area: navigation;
+
+}
+
+.main {
+    grid-area: main;
+}
+
+/* ============================================= */
+/*                    Header                     */
+/* ============================================= */
+
+.header {
+    flex-grow: 1;
+    grid-template-rows: auto;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin: 0 auto;
+}
