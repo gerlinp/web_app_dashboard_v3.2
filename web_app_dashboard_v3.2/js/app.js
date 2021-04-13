@@ -21,13 +21,13 @@ alertBanner.innerHTML = `
     </div>
 `;
 
-notification.innerHTML = ` 
-    <div class="notification-item" >
-        <div><p>Dale Byrd Liked ...</p><p class="clsBtn">X</p></div>
-        <div><p>Dawn Wood commented...</p><p class="clsBtn">X</p></div>
-        <div><p>Dan Oliver made a post...</p><p class="clsBtn">X</p></div>
-    </div> 
-`;
+// notification.innerHTML = ` 
+//     <div class="notification-item" >
+//         <div><p>Dale Byrd Liked ...</p><p class="clsBtn">X</p></div>
+//         <div><p>Dawn Wood commented...</p><p class="clsBtn">X</p></div>
+//         <div><p>Dan Oliver made a post...</p><p class="clsBtn">X</p></div>
+//     </div> 
+// `;
 
 
 // remove notification event Listener
