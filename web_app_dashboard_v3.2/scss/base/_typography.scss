@@ -1,0 +1,56 @@
+/* ============================================= */
+/*              Typography                       */
+/* ============================================= */
+
+* {
+    font-family: 'Quicksand', sans-serif;
+    color: $font-light;
+  }
+  
+  
+
+  
+  h1 {
+    font-size: $font-size-medium;
+    text-transform: uppercase;
+  }
+  
+  .activity-info p,
+  .member-info p {
+    font-size: $font-size-small;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .arrow {
+    color: $main-dark;
+    font-size: $font-size-large;
+  }
+  
+  .join-date,
+  .email,
+  .time {
+    font-size: $font-size-tiny;
+  }
+  
+  .email {
+    color: $main;
+    text-decoration: none;
+  }
+  
+  #message-user {
+    font-size: $font-size-small;
+    #user-search::placeholder,
+    #message::placeholder {
+      padding: 5px;
+    }
+  }
+  
+  .toggle-setting p {
+    font-size: $font-size-small;
+  }
+  
+  button {
+    font-size: $font-size-small;
+  }
+  
