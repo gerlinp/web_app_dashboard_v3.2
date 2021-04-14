@@ -1,41 +1,98 @@
 /* ============================================= */
-/* Sub-Folder Imports */
+/*              Base styles                      */
 /* ============================================= */
-/* ============================================= */
-/*                  Colors                       */
-/* ============================================= */
-/* ============================================= */
-/*              Other Variables                  */
-/* ============================================= */
-/* ============================================= */
-/* Imports */
-/* ============================================= */
-/* ============================================= */
-/*              Typography                       */
-/* ============================================= */
-* { font-family: 'Quicksand', sans-serif; color: white; }
 
-h1 { font-size: 15px; text-transform: uppercase; }
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+  list-style-type: none;
 
-.activity-info p, .member-info p { font-size: 12px; margin: 0; padding: 0; }
+}
 
-.arrow { color: #CA2085; font-size: 25px; }
+body {
+  background: #121212;
+  color: rgba(255,255,255, .87);
+  fill: #bb86fc;
+  min-width: 320px;
+}
+main div {
+  padding: 10px;
+}
 
-.join-date, .email, .time { font-size: 10px; }
-
-.email { color: #CF8DAB; text-decoration: none; }
-
-#message-user { font-size: 12px; }
-
-#message-user #user-search::placeholder, #message-user #message::placeholder { padding: 5px; }
-
-.toggle-setting p { font-size: 12px; }
-
-button { font-size: 12px; }
+header svg {
+  width: 2rem;
+}
+nav svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.social-image {
+  width: 7.5rem;
+}
 
 /* ============================================= */
-/* Base Styles */
+/*                   HEADER                      */
 /* ============================================= */
-* { box-sizing: border-box; text-decoration: none; list-style-type: none; background-color: #121212; color: white; }
 
-main > div { padding: 10px; }
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 700;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.logo {
+    display: block;
+    margin-right: auto;
+    color: #fff;
+    font-size: .75rem;
+}
+
+.header li {
+  padding: 5px 5px 0px 5px;
+}
+.header img {
+  height: 35px;
+  border-radius: 50%;
+}
+
+#notification {
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  transition: transform .3s ease-out;
+  padding-top: 10px;
+  border-right: 1px solid #bb86fc;
+}
+
+#notification:hover {
+  animation: ding .5s ease-out;
+  transform: rotate(0deg)
+}
+
+span .badge {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  padding: 4px 4px;
+  border-radius: 50%;
+  background: green;
+}
+
+span .active {
+  display: block;
+}
+
+
+
+
+nav {
+  background: #bb86fc;
+  fill:  rgba(255,255,255, .87);
+  width: 100%;
+}
