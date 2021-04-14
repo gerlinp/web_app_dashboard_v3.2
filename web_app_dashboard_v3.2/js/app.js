@@ -17,7 +17,8 @@ function close(btn) {
 //-------------- Alert-Banner & Notification---------------//
 alertBanner.innerHTML = `
     <div class="alert-banner">
-    <p><strong>Alert:</strong> You have overdue tasks to complete </p> <p class="clsBtn">X</p>
+    <p><strong>Alert:</strong> You have overdue tasks to complete </p>
+    <p class="clsBtn">X</p> 
     </div>
 `;
 
