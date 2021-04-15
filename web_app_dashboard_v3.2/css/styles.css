@@ -136,10 +136,11 @@ nav {
 /* ============================================= */
 
 
-/* main {
+main {
   grid-area: main;
   display: grid;
-  min-width: 0;
+  /* overflow: hidden; 
+  grid-template-columns: 1fr fit-content(20%); */
   grid-template-areas:
   "header"
   "traffic"
@@ -150,7 +151,7 @@ nav {
   "activity"
   "message"
   "settings";
-} */
+}
 
 .main-header {
   grid-area: header;
