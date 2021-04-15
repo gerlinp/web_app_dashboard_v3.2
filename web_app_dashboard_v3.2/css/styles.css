@@ -30,6 +30,11 @@ nav svg {
   width: 7.5rem;
 }
 
+a:visited {
+  color: #bb86fc
+}
+
+
 /* ============================================= */
 /*                   HEADER                      */
 /* ============================================= */
@@ -64,8 +69,7 @@ header {
   padding: 5px 5px 0px 5px;
 }
 .header img {
-  height: 35px;
-  border-radius: 50%;
+  height: 45px;
 }
 
 #notification {
@@ -96,6 +100,12 @@ span .active {
   display: block;
 }
 
+section {
+  background: #2e2e2e;
+  margin: 10px;
+  border-radius: 20px;
+}
+
 /* ============================================= */
 /*                   NAVIGATION                  */
 /* ============================================= */
@@ -121,17 +131,72 @@ nav {
   margin: 0 1rem;
   padding: 7px 0 0 0;
 }
+/* ============================================= */
+/*                  MAIN GRID                    */
+/* ============================================= */
+
+
+/* main {
+  grid-area: main;
+  display: grid;
+  min-width: 0;
+  grid-template-areas:
+  "header"
+  "traffic"
+  "daily"
+  "mobile"
+  "social"
+  "members"
+  "activity"
+  "message"
+  "settings";
+} */
+
+.main-header {
+  grid-area: header;
+}
+
+#traffic-list {
+  grid-area: traffic;
+}
+
+#daily {
+  grid-area: daily;
+}
+
+#mobile {
+  grid-area: mobile;
+}
+
+#social {
+  grid-area: social;
+}
+
+#members {
+  grid-area: members;
+}
+
+#activity {
+  grid-area: activity;
+}
+
+#message {
+  grid-area: message;
+}
+
+#settings { 
+  grid-area: settings
+}
+
 
 /* ============================================= */
 /*                  MAIN HEADER                  */
 /* ============================================= */
 
 .main-header {
-    grid-area: header;
     display: grid;
     grid-template-columns: 1fr 6fr;
-    padding-top: 0px;
-    padding-right: 0px;
+    padding: 0;
     font-size: .9rem;
     grid-template-areas:
     "tab search"
@@ -140,7 +205,7 @@ nav {
 
 .headline {
   grid-area: tab;
-  padding-right: 20px;
+  padding: 0 10px ;
 }
 
 .main-header-search  {
@@ -169,7 +234,7 @@ nav {
   color: rgba(255,255,255,.87);
   background: #bb86fc;
   border-radius: 5px;
-  margin: 10px 10px 10px 0px;
+  padding-right: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -181,6 +246,117 @@ nav {
 .closebtn {
   margin-right: auto;
 }
+
+
+/* ============================================= */
+/*                    CHARTS                     */
+/* ============================================= */
+
+#traffic-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.traffic-nav {
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+}
+
+.traffic-link {
+  margin: 5px auto;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#social-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.widget-container-full,
+.widget-container-half{
+  margin: 20px;
+  padding: 5px;
+}
+
+/* ============================================= */
+/*                SOCIAL STATS                   */
+/* ============================================= */
+
+#social {
+  grid-area: social;
+}
+.social-container {
+  display:grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 2fr;
+  padding: 20px 0 0;
+  width: 100%;
+  height:200px;
+  border: solid 2px #bb86fc ;
+  border-radius: 10px;
+  margin: 1rem auto;
+}
+
+.social-image  {
+  grid-row: 1 / -1;
+  margin: auto;
+}
+
+#members img,
+#activity img {
+  border-radius: 100%;
+}
+.social-stat {
+  font-size: 50px;
+  margin:0 auto;
+}
+
+
+h3 {
+  padding: 15px;
+}
+
+
+/* ============================================= */
+/*              MEMBERS & ACTIVITY               */
+/* ============================================= */
+
+.members-container,
+.activity-container {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding: 0;
+  margin: 10px;
+  border-bottom: 1px solid #bb86fc;
+}
+
+.members-container:last-child,
+.activity-container:last-child{
+  border: none;
+}
+
+
+.members-container {
+  grid-template-areas: 
+  "profile"
+  "name"
+  "email"
+  "date";
+}
+.activity-container {
+  grid-template-areas: 
+  "profile"
+  "activity"
+  "time";
+}
+
+
 
 /* ============================================= */
 /*                MEDIA QUERIES                  */

@@ -7,6 +7,10 @@ const mobileCanvas = document.querySelector('#mobile-chart')
 const traffic = document.querySelector('#traffic')
 const bell = document.querySelector(".notification")
 const bellItems = document.querySelectorAll('.bell-item')
+const membersHtml = document.querySelector('#members-container');
+const activityHtml = document.querySelector('#activity-container');
+let newMembers = '';
+let activity = '';
 
 function close(btn) {
     if (btn.classList.contains("clsBtn")) {
@@ -193,7 +197,81 @@ let mobileChart = new Chart(mobileCanvas, {
     options: mobileOptions
 });
 
-//-------------- Bell Notification---------------//
+
+//-------------- MEMBERS & ACTIVITY---------------//
+
+let members = [
+    {
+        name:'Jasen Murphy',
+        email:'jasen.murphy@example.com',
+        profile:'images/member-1.jpg',
+        recentActivity: {
+            action:'commented on',
+              item:"MyApp's SEO Tips",
+              time:'4 hours ago' 
+        }
+    },
+    {
+           name: 'Dale Byrd',
+          email: 'dale.byrd52@example.com',
+        profile: 'images/member-2.jpg',
+        recentActivity: {
+          action: 'liked the post',
+            item: "Facebook's Changes for 2021",
+            time: '5 hours ago',
+        }
+      },
+      {
+           name: 'Dawn Wood',
+          email: 'dawn.wood16@example.com',
+        profile: 'images/member-3.jpg',
+        recentActivity: {
+          action: 'commented on',
+            item: "Facebook's Changes for 2021",
+            time: '5 hours ago',
+        }
+      },
+      {
+           name: 'Dan Oliver',
+          email: 'dan.oliver82@example.com',
+        profile: 'images/member-4.jpg',
+        recentActivity: {
+          action: 'posted',
+            item: "YourApp's SEO Tips",
+            time: '1 day ago',
+        }
+      },
+    ]
+
+
+
+
+
+for ( let i = 0; i < members.length; i++) {
+    let member = members[i];
+    newMembers += `
+    <div class="members-container">
+            <img src="${member.profile}" class="profile-image" alt="profile image">
+        <div class="member-text">
+            <p>${member.name}</p>
+            <a href="#">${member.email}</a>
+        </div>
+        <p>03/29/2021</p>
+    </div> 
+    `;
+    activity += `
+    <div class="members-container">
+            <img src="${member.profile}" class="profile-image" alt="profile image">
+        <div class="member-text">
+            <p>${member.name} ${member.recentActivity.action} ${member.recentActivity.item}</p>
+        </div>
+        <p>${member.recentActivity.time}</p>
+    </div> 
+    `
+}
+    membersHtml.innerHTML = `${newMembers}`;
+    activityHtml.innerHTML = `${activity}`;
+
 
 
 

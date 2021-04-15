@@ -29,7 +29,7 @@
                 </div>
             </li>
             <li id="vline"><div></div></li>
-            <li class="profile-image"><img src="images/member-1.jpg" alt="profile image"></li> 
+            <li class="profile-image"><img src="images/avatar.png" alt="profile image"></li> 
             <li><h3>Gerlin</h3></li>  
         </ul>
     </header>
@@ -70,21 +70,21 @@
                 <!-- Javascript here -->
            </div>
         </div>
-       <article id="traffic-list">
-           <div class="traffic-header">
+       <section id="traffic-list">
+           <div id="traffic-header">
                 <h3>Traffic</h3> 
                 <ul class="traffic-nav">    
-                        <li class=traffic-link>Hourly</li>
-                        <li class=traffic-link>Daily</li>
-                        <li class=traffic-link>Weekly</li>
-                        <li class=traffic-link>Monthly</li>
+                        <li class="traffic-link active" >Hourly</li>
+                        <li class="traffic-link">Daily</li>
+                        <li class="traffic-link">Weekly</li>
+                        <li class="traffic-link">Monthly</li>
                 </ul>
            </div>
            <div class="widget-container-full">
                <!-- line graph -->
                <canvas id="traffic-chart"></canvas>
            </div>
-        </article>
+        </section>
        
         <section id="daily" >
             <h3>Daily Traffic</h3>
@@ -110,7 +110,7 @@
                         </svg>
                     </div>
                     <p>Facebook</p>
-                    <p>10,345</p>
+                    <p class="social-stat">10,345</p>
                 </div>        
                 <div class="social-container">
                     <div class="social-image">
@@ -119,7 +119,7 @@
                         </svg>
                     </div>
                     <p>Instagram</p>
-                    <p>16,445</p>
+                    <p class="social-stat">16,445</p>
                 </div>
                 <div class="social-container">
                     <div class="social-image">
@@ -128,7 +128,7 @@
                         </svg>
                     </div>
                     <p>Twitter</p>
-                    <p>22,189</p>
+                    <p class="social-stat">22,189</p>
                 </div>
             </div>
         </section>
@@ -153,74 +153,7 @@
         </form>
     </section>
 
-            <div class="members-container">
-                <img src="images/member-2.jpg" class="profile-image" alt="profile image">
-                <div class="member-text">
-                    <p>Dale Byrd</p>
-                    <a href="#"></a>dale.byrd@example.com</a>
-                </div>
-                <p>10/15/15</p>
-            </div> 
-            <div class="members-container">
-                <img src="images/member-3.jpg" class="profile-image" alt="profile image">
-                <div class="member-text">
-                    <p>Dawn Wood</p>
-                    <a href="#"></a>dawn.wood@example.com</a>
-                </div>
-                <p>10/15/15</p>
-            </div> 
-            <div class="members-container">
-                <img src="images/member-4.jpg" class="profile-image" alt="profile image">
-                <div class="member-text">
-                    <p>Dan Oliver</p>
-                    <a href="#"></a>dan.oliver@example.com</a>
-                </div>
-                <p>10/15/15</p>
-            </div> 
-    </section>
-
-    <section class="recent-activity">
-        <h3>New Members</h3>
-        <div class="members-container">
-            <img src="images/member-1.jpg" class="profile-image" alt="profile image">
-            <div class="member-text">
-                <p>Jasen Murphy commented on <strong>WebApp's SEO Tips</strong></p>
-            </div>
-            <p>4 hours ago</p>
-        </div> 
-
-        <section class="recent-activity">
-            <h3>Recent Activity</h3>
-            <div class="members-container">
-                <img src="images/member-2.jpg" class="profile-image" alt="profile image">
-                <div class="member-text">
-                    <p>Dale Byrd liked the post <strong>Facebook's Changes for 2021</strong></p>
-                </div>
-                <p>5 hours ago</p>
-            </div> 
-
-        <section class="members">
-            <h3>New Members</h3>
-            <div class="members-container">
-                <img src="images/member-3.jpg" class="profile-image" alt="profile image">
-                <div class="member-text">
-                    <p>Dawn Wood commented on <strong>Facebook's Changes for 2021</strong></p>
-                </div>
-                <p>5 hours ago</p>
-            </div> 
-
-            <section class="members">
-                <h3>New Members</h3>
-                <div class="members-container">
-                    <img src="images/member-4.jpg" class="profile-image" alt="profile image">
-                    <div class="member-text">
-                        <p>Dan Oliver posted <strong>WebApp's SEO Tips</strong></p>
-                    </div>
-                    <p>1 day ago</p>
-                </div> 
-    </section>
-
-    <section class="settings">
+    <section id="settings">
         <h3>Settings</h3>
         
         <label class="switch-light switch-candy" onclick="">
