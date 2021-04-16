@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -155,28 +154,23 @@
 
     <section id="settings">
         <h3>Settings</h3>
-        
-        <label class="switch-light switch-candy" onclick="">
+        <label class="switch-light switch-Bluetooth col-sm-4" onclick="">
             <input type="checkbox">
-          
-            <strong>
-              Send Email Notifications
+            <strong col-sm-8>
+              Send Email Notification
             </strong>
-          
             <span>
               <span>Off</span>
               <span>On</span>
               <a></a>
             </span>
           </label>
-        
-          <label class="switch-light switch-candy" onclick="">
+          
+          <label class="switch-light switch-Bluetooth col-sm-4" onclick="">
             <input type="checkbox">
-          
-            <strong>
-              Set profile to public
+            <strong col-sm-8>
+            Set Profile to Public
             </strong>
-          
             <span>
               <span>Off</span>
               <span>On</span>
@@ -184,7 +178,7 @@
             </span>
           </label>
 
-          <select class="form-field" id="timezone">
+        <select class="form-field" id="timezone">
             <option disabled selected>Select a Timezone</option>
             <option>Eastern</option>
             <option>Central</option>
@@ -199,7 +193,6 @@
             <button class="button-disabled" id="cancel">Cancel</button>
         </div>
     </section>
-
 
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>

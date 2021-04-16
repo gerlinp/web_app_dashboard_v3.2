@@ -139,8 +139,8 @@ nav {
 main {
   grid-area: main;
   display: grid;
-  /* overflow: hidden; 
-  grid-template-columns: 1fr fit-content(20%); */
+  overflow: hidden; 
+  grid-template-columns: 1fr fit-content(20%);
   grid-template-areas:
   "header"
   "traffic"
@@ -280,9 +280,13 @@ main {
 
 .widget-container-full,
 .widget-container-half{
- 
+  width: 95vw;
   padding: 5px;
 }
+
+
+
+
 
 /* ============================================= */
 /*                SOCIAL STATS                   */
@@ -388,15 +392,47 @@ textarea,
 }
 
 
+/* ============================================= */
+/*                   SETTINGS                    */
+/* ============================================= */
+
+#settings {
+  padding: 5px;
+  justify-content: space-between;
+}
+
+#settings {
+  font-size: small;
+}
+#settings span {
+  display: block;
+  float: right;
+  width: 40%;
+}
+
+
+
+
+
+
 
 
 /* ============================================= */
 /*                MEDIA QUERIES                  */
 /* ============================================= */
 
-@media screen and (min-width: 768px) {
-  .nav li {
-      margin: .5rem 0;
-      padding: 0 0 0 7px;
+
+@media (min-width: 768px) {
+  .widget-container-full {
+    width: 90vw;
   }
+  .widget-container-half {
+    width: 45vw;
+  }
+  .nav li {
+    margin: .5rem 0;
+    padding: 0 0 0 7px;
 }
+}
+
+
