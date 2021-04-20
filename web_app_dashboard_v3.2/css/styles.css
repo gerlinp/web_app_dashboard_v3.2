@@ -34,6 +34,11 @@ a:visited {
   color: #bb86fc
 }
 
+section {
+  background: #2e2e2e;
+  margin: 10px;
+  border-radius: 20px;
+}
 
 /* ============================================= */
 /*                   HEADER                      */
@@ -78,15 +83,49 @@ header {
   width: 3rem;
   transition: transform .3s ease-out;
   padding-top: 10px;
-  border-right: 1px solid #bb86fc;
+  display:block
 }
 
 #notification:hover {
-  animation: ding .5s ease-out;
+  animation: ring .5s ease-out;
   transform: rotate(0deg)
 }
 
-span .badge {
+@keyframes ring {
+  0% {
+    transform: rotate(15deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-15deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(15deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+}
+
+
+.badge {
   display: none;
   position: absolute;
   top: 10px;
@@ -96,21 +135,23 @@ span .badge {
   background: green;
 }
 
-span .active {
+.active {
   display: block;
 }
 
-section {
-  background: #2e2e2e;
-  margin: 10px;
-  border-radius: 20px;
+.profile-image {
+  border-left: 1px solid #bb86fc;
 }
+
+
 
 /* ============================================= */
 /*                     BELL                      */
 /* ============================================= */
 
 /* bell animation */
+
+
 
 /* ============================================= */
 /*                   NAVIGATION                  */
@@ -257,6 +298,7 @@ main {
 
 .alert-banner {
   padding: 10px;
+  margin: 10px;
 }
 
 .closebtn {

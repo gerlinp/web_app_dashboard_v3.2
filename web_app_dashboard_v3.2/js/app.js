@@ -1,12 +1,12 @@
 const alertBanner = document.querySelector('#alert');
-const notification = document.querySelector('#notification')
+const notification = document.querySelector('#notification');
 const closeButton = [alertBanner, notification];
-const trafficCanvas = document.querySelector('#traffic-chart')
-const dailyCanvas = document.querySelector('#daily-chart')
-const mobileCanvas = document.querySelector('#mobile-chart')
-const traffic = document.querySelector('#traffic')
-const bell = document.querySelector(".notification")
-const bellItems = document.querySelectorAll('.bell-item')
+const trafficCanvas = document.querySelector('#traffic-chart');
+const dailyCanvas = document.querySelector('#daily-chart');
+const mobileCanvas = document.querySelector('#mobile-chart');
+const traffic = document.querySelector('#traffic');
+const bell = document.querySelector(".badge");
+const bellItems = document.querySelectorAll('.bell-item');
 const membersHtml = document.querySelector('#members-container');
 const activityHtml = document.querySelector('#activity-container');
 let newMembers = '';
@@ -19,6 +19,8 @@ function close(btn) {
 } 
 
 //-------------- Alert-Banner & Notification---------------//
+
+
 alertBanner.innerHTML = `
     <div class="alert-banner">
     <p><strong>Alert:</strong> You have overdue tasks to complete </p>
@@ -26,13 +28,27 @@ alertBanner.innerHTML = `
     </div>
 `;
 
-// notification.innerHTML = ` 
-//     <div class="notification-item" >
-//         <div><p>Dale Byrd Liked ...</p><p class="clsBtn">X</p></div>
-//         <div><p>Dawn Wood commented...</p><p class="clsBtn">X</p></div>
-//         <div><p>Dan Oliver made a post...</p><p class="clsBtn">X</p></div>
-//     </div> 
-// `;
+notification.addEventListener('click', e =>{
+    if ( bell.classList.contains('active')) {
+        alertBanner.innerHTML += `    
+        <div class="alert-banner">
+        <p><strong>Alert:</strong> Jasen Murphy commented on MyApp's SEO Tips </p>
+        <p class="clsBtn">X</p> 
+        </div>
+        <div class="alert-banner">
+        <p><strong>Alert:</strong> Dale Byrd liked the post on Facebook's Changes for 2021 </p>
+        <p class="clsBtn">X</p> 
+        </div>
+        <div class="alert-banner">
+        <p><strong>Alert:</strong> Dawn Wood commented on Facebook's Changes for 2021 </p>
+        <p class="clsBtn">X</p> 
+        </div>`
+    }
+    bell.classList.remove('active')
+});
+
+
+
 
 
 // remove notification event Listener
@@ -40,15 +56,10 @@ closeButton.forEach(item => {
     item.addEventListener('click', e => {
         if(e.target.className === 'clsBtn'){   
             let parentEl = e.target.parentElement; 
-        
-            parentEl.style.display = "none";
-            
-    }
+            parentEl.style.display = "none"; 
+            }
+    });
 });
-}
-);
-
-
 
 
 //-------------- Traffic Chart---------------//
