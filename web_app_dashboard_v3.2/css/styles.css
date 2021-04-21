@@ -323,7 +323,7 @@ main {
   display: flex;
 }
 
-.traffic-link {
+.traffic-nav li {
   margin: 5px auto;
   padding: 5px;
   cursor: pointer;
@@ -341,9 +341,11 @@ main {
   padding: 5px;
 }
 
-
-
-
+.showMe {
+  background: green;
+  padding: 5px;
+  border-radius: 10px;
+}
 
 /* ============================================= */
 /*                SOCIAL STATS                   */

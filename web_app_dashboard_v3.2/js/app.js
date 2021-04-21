@@ -9,9 +9,11 @@ const bell = document.querySelector(".badge");
 const bellItems = document.querySelectorAll('.bell-item');
 const membersHtml = document.querySelector('#members-container');
 const activityHtml = document.querySelector('#activity-container');
+const trafficNav = document.querySelector('.traffic-nav');
 let newMembers = '';
 let activity = '';
-
+let trafficChart = '';
+let li = '';
 function close(btn) {
     if (btn.classList.contains("clsBtn")) {
         btn.parent.style.display = "none";
@@ -32,24 +34,20 @@ notification.addEventListener('click', e =>{
     if ( bell.classList.contains('active')) {
         alertBanner.innerHTML += `    
         <div class="alert-banner">
-        <p><strong>Alert:</strong> Jasen Murphy commented on MyApp's SEO Tips </p>
+        <p>Jasen Murphy commented on MyApp's SEO Tips </p>
         <p class="clsBtn">X</p> 
         </div>
         <div class="alert-banner">
-        <p><strong>Alert:</strong> Dale Byrd liked the post on Facebook's Changes for 2021 </p>
+        <p>Dale Byrd liked the post on Facebook's Changes for 2021 </p>
         <p class="clsBtn">X</p> 
         </div>
         <div class="alert-banner">
-        <p><strong>Alert:</strong> Dawn Wood commented on Facebook's Changes for 2021 </p>
+        <p>Dawn Wood commented on Facebook's Changes for 2021 </p>
         <p class="clsBtn">X</p> 
         </div>`
     }
     bell.classList.remove('active')
 });
-
-
-
-
 
 // remove notification event Listener
 closeButton.forEach(item => {
@@ -63,31 +61,18 @@ closeButton.forEach(item => {
 
 
 //-------------- Traffic Chart---------------//
-
-let trafficData = {
-    labels: ["16-22", "23-29", "30-5", "6-12" , "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-    datasets: [{
-        label: '# of Hits',
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500], 
-        fill:true,
-        backgroundColor: '#bb86fc',
-        borderWidth: 1
-    }]
-};
-
-let trafficUpdate = {
     
-    monthly: {
+    let Monthly = {
         labels: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets:[{
-            data: [1403, 1975, 1515, 866, 1988, 2207, 739, 2339, 2250, 2416, 1520], 
+            data: [1403, 1975, 1515, 2000, 1988, 2207, 1800, 2339, 2250, 2416, 1520, 1302], 
             fill:true,
             backgroundColor: '#bb86fc',
             borderWidth: 1,
             }]
-    },
+    }
 
-    weekly: {
+    let Weekly = {
         labels: ["16-22", "23-29", "30-5", "6-12" , "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
         datasets:[{
             data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
@@ -95,9 +80,9 @@ let trafficUpdate = {
             backgroundColor: '#bb86fc',
             borderWidth: 1,
             }]
-    },
+    }
 
-    daily: {
+    let Daily = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets:[{
             data: [750, 1000, 1500, 1750,  1850, 1500, 2500],
@@ -105,23 +90,21 @@ let trafficUpdate = {
             backgroundColor: '#bb86fc',
             borderWidth: 1,
             }]
-    },
-    hourly: {
+    }
+
+    let Hourly = {
         labels: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
         datasets:[{
-            data: [1331, 2623, 2728, 2432, 588, 2676, 2381, 2990, 629],
+            data: [2331, 2623, 2728, 2432, 2345, 2676, 2381, 2990, 1629],
             fill:true,
             backgroundColor: '#bb86fc',
             borderWidth: 1,
             }]
-    },
-} 
+    }
+
 
 let trafficOptions = {
     aspectRation: 2.5,
-    animation: {
-        duration: 0,
-    },
     scales: {
         yAxes: [{
             ticks: {
@@ -138,11 +121,46 @@ let trafficOptions = {
 };
 
 
-let trafficChart = new Chart(trafficCanvas, {
-    type: 'line',
-    data: trafficData,
-    options: trafficOptions
+trafficNav.addEventListener('click', e => {
+    let event = e.target
+    li = e.target.innerHTML;
+    console.log(li);
+    if(li === 'Hourly'){   
+        destroyChart();
+        makeChart(Hourly);
+    } else if (li === 'Daily') {
+        destroyChart();
+        makeChart(Daily);
+    } else if (li === 'Monthly') {
+        destroyChart();
+        makeChart(Monthly);
+    } else if (li === 'Weekly') {
+        destroyChart();
+        makeChart(Weekly);
+    }
 });
+
+function makeChart(chart) {
+    trafficChart = new Chart(trafficCanvas, {
+        type: 'line',
+        data: chart,
+        options: trafficOptions
+    });
+};
+function destroyChart() {
+    trafficChart.destroy();
+};
+
+function remove() {
+
+};
+
+makeChart(trafficData);
+
+
+
+
+
 
 
 //-------------- Daily Chart---------------//
