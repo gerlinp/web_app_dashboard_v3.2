@@ -72,12 +72,22 @@
        <section id="traffic-list">
            <div id="traffic-header">
                 <h3>Traffic</h3> 
-                <ul class="traffic-nav">    
-                        <li class="showMe">Hourly</li>
-                        <li>Daily</li>
-                        <li>Weekly</li>
-                        <li>Monthly</li>
-                </ul>
+                <div class="switch-toggle switch-candy traffic-nav">
+                    <form name="trafficNav">
+                        <input id="hour3" name="view3" type="radio" checked>
+                        <label for="hour3" onclick="">Hourly</label>
+                    
+                        <input id="day3" name="view3" type="radio">
+                        <label for="day3" onclick="">Daily</label>
+                    
+                        <input id="week3" name="view3" type="radio">
+                        <label for="week3" onclick="">Weekly</label>
+                    
+                        <input id="month3" name="view3" type="radio">
+                        <label for="month3" onclick="">Monthly</label>
+                        <a></a>
+                    </form>
+                </div>
            </div>
            <div class="widget-container-full">
                <!-- line graph -->

@@ -10,6 +10,8 @@ const bellItems = document.querySelectorAll('.bell-item');
 const membersHtml = document.querySelector('#members-container');
 const activityHtml = document.querySelector('#activity-container');
 const trafficNav = document.querySelector('.traffic-nav');
+let updateChart = document.trafficNav.view3;
+let prev = null;
 let newMembers = '';
 let activity = '';
 let trafficChart = '';
@@ -120,26 +122,34 @@ let trafficOptions = {
     
 };
 
-
-trafficNav.addEventListener('click', e => {
-    let event = e.target
-    li = e.target.innerHTML;
-    console.log(li);
-    if(li === 'Hourly'){   
+// function that displays chart thats selected.
+function displayChart() {
+    if (document.getElementById('hour3').checked) {
         destroyChart();
         makeChart(Hourly);
-    } else if (li === 'Daily') {
+    } else if  (document.getElementById('day3').checked) {
         destroyChart();
         makeChart(Daily);
-    } else if (li === 'Monthly') {
-        destroyChart();
-        makeChart(Monthly);
-    } else if (li === 'Weekly') {
+    } else if  (document.getElementById('week3').checked) {
         destroyChart();
         makeChart(Weekly);
-    }
-});
+    } else  {
+        destroyChart();
+        makeChart(Monthly);
+    };
+}
 
+//  event listener for traffic chart
+for (let i = 0; i < updateChart.length; i++) {
+    updateChart[i].onclick = function () {
+        if(this !== prev) {
+            prev = this;
+        }
+        displayChart(); 
+    }
+}
+
+// chart creation
 function makeChart(chart) {
     trafficChart = new Chart(trafficCanvas, {
         type: 'line',
@@ -147,15 +157,14 @@ function makeChart(chart) {
         options: trafficOptions
     });
 };
+// chart destruction
 function destroyChart() {
     trafficChart.destroy();
 };
 
-function remove() {
 
-};
 
-makeChart(trafficData);
+makeChart(Hourly);
 
 
 
