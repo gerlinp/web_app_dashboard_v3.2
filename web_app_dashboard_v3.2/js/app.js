@@ -162,15 +162,7 @@ function destroyChart() {
     trafficChart.destroy();
 };
 
-
-
 makeChart(Hourly);
-
-
-
-
-
-
 
 //-------------- Daily Chart---------------//
 const dailyData = {
@@ -281,10 +273,6 @@ let members = [
       },
     ]
 
-
-
-
-
 for ( let i = 0; i < members.length; i++) {
     let member = members[i];
     newMembers += `
@@ -312,6 +300,33 @@ for ( let i = 0; i < members.length; i++) {
 
 
 
+//-------------- MESSAGE ---------------//
+    
+const search = document.querySelector('#user-field');
+const message = document.querySelector('#message-field');
+const send = document.querySelector('#send');
+send.addEventListener('click', () => {
+  if (search.value === '' && message.value === '') {
+  window.alert('Please fill out both the user and message fields before sending.');
+  } else if (search.value === '' ) {
+  window.alert('User has not been selected');
+  } else if (message.value === '' ) {
+  window.alert('Message field is blank.');
+  } else {
+  window.alert(`Message has been sent to: ${search.value}.`);
+  }
+  search.value = '';
+  message.value = '';
+});
 
-    
-    
+// ------------ Search and Filter-------------//
+const users = [ 
+    "Mohammed Giles","Eddie Cordova","Ulises Spence","Sabrina Lucas","Brady Charles","Brenda Hill","Chase Dawson","Graham House","Nikolas Sexton","Damarion Olsen","Nico Madden","Bronson Lozano","Sanai Dawson","Azul Waters","Jasper Whitehead","Kendall Combs","Niko Arnold","Sophia Kramer","Lorena Stuart","Parker Randall","Everett Kemp","Kenzie Garner","Kaelyn Hammond","Madelyn Hampton","Geovanni Green","Bridget Vaughn","Irene Anthony","Ariel Frazier","Edith Shah","Destinee Chapman","Kian Rosario","Chris Ford","Ben Bridges","Tucker Hebert","Parker Castillo","Barrett Greene","Jaylynn Snyder","Travis Stevens","Sophie Kaiser","Tyrell Molina", "Jasen Murphy", "Dale Byrd", "Dawn Wood", "Dan Oliver"];
+
+const searchDiv = document.querySelector('.searchDiv')
+// search
+const suggestionsBox = document.querySelector('.suggestions')
+
+//  Search users and filter
+
+

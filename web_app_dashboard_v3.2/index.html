@@ -156,7 +156,13 @@
     <section id="message">
         <h3>Message User</h3>
         <form class="widget-container">
-            <input type="text" placeholder="Search for user" class="form-field" id="user-field">
+           
+            <div class="input-container searchDiv">
+                <input type="text" placeholder="Search for user" class="form-field" id="user-field">
+                <div class="suggestions"></div>
+            </div>
+           
+            
             <textarea placeholder="Message for user" class="form-area" id="message-field"></textarea>
             <button type="submit" id="send">SEND</button>
         </form>
