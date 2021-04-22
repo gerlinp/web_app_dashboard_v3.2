@@ -69,7 +69,7 @@ closeButton.forEach(item => {
         datasets:[{
             data: [1403, 1975, 1515, 2000, 1988, 2207, 1800, 2339, 2250, 2416, 1520, 1302], 
             fill:true,
-            backgroundColor: '#bb86fc',
+            backgroundColor: 'rgba(187, 134, 252,.60)',
             borderWidth: 1,
             }]
     }
@@ -79,7 +79,7 @@ closeButton.forEach(item => {
         datasets:[{
             data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
             fill:true,
-            backgroundColor: '#bb86fc',
+            backgroundColor: 'rgba(187, 134, 252,.60)',
             borderWidth: 1,
             }]
     }
@@ -89,7 +89,7 @@ closeButton.forEach(item => {
         datasets:[{
             data: [750, 1000, 1500, 1750,  1850, 1500, 2500],
             fill:true,
-            backgroundColor: '#bb86fc',
+            backgroundColor: 'rgba(187, 134, 252,.60)',
             borderWidth: 1,
             }]
     }
@@ -99,7 +99,7 @@ closeButton.forEach(item => {
         datasets:[{
             data: [2331, 2623, 2728, 2432, 2345, 2676, 2381, 2990, 1629],
             fill:true,
-            backgroundColor: '#bb86fc',
+            backgroundColor: 'rgba(187, 134, 252,.60)',
             borderWidth: 1,
             }]
     }
@@ -170,7 +170,7 @@ const dailyData = {
     datasets: [{
         label: '# of Hits',
         data: [75, 115, 175, 125, 225, 200, 100],
-        backgroundColor: '#bb86fc',
+        backgroundColor: 'rgba(187, 134, 252,.60)',
         borderWidth: 1
     }],
 };
@@ -305,6 +305,59 @@ for ( let i = 0; i < members.length; i++) {
 const search = document.querySelector('#user-field');
 const message = document.querySelector('#message-field');
 const send = document.querySelector('#send');
+
+// ------------ Search and Filter-------------//
+const users = [ 
+    "Mohammed Giles","Eddie Cordova","Ulises Spence","Sabrina Lucas","Brady Charles","Brenda Hill","Chase Dawson","Graham House","Nikolas Sexton","Damarion Olsen","Nico Madden","Bronson Lozano","Sanai Dawson","Azul Waters","Jasper Whitehead","Kendall Combs","Niko Arnold","Sophia Kramer","Lorena Stuart","Parker Randall","Everett Kemp","Kenzie Garner","Kaelyn Hammond","Madelyn Hampton","Geovanni Green","Bridget Vaughn","Irene Anthony","Ariel Frazier","Edith Shah","Destinee Chapman","Kian Rosario","Chris Ford","Ben Bridges","Tucker Hebert","Parker Castillo","Barrett Greene","Jaylynn Snyder","Travis Stevens","Sophie Kaiser","Tyrell Molina", "Jasen Murphy", "Dale Byrd", "Dawn Wood", "Dan Oliver"];
+
+const searchDiv = document.querySelector('.searchDiv');
+// search
+const suggestionsBox = document.querySelector('.suggestions');
+// users
+
+search.onkeyup = (e) => {
+    let userSearch = e.target.value;
+    let potentials = [];
+    if (userSearch) {
+        potentials = users.filter((data) => {
+            return data.toLocaleLowerCase().includes(userSearch.toLocaleLowerCase());
+        });
+    suggestionsBox.classList.add('show');
+    } else {
+    suggestionsBox.classList.remove('show');
+    }
+
+    makeSugggestionList(potentials);
+};
+
+function makeSugggestionList(listOfUsers) {
+    while (suggestionsBox.lastChild) {
+        suggestionsBox.removeChild(suggestionsBox.lastChild);
+    }
+    if (listOfUsers.length === 0 ) {
+        listOfUsers.push(search.value)
+    }
+    listOfUsers.forEach(name => {
+        let userLi = createElement('li', name, 'user' , suggestionsBox)
+        userLi.setAttribute('onclick', 'select(this)')
+    })
+}
+
+function select (element) {
+    search.value = element.textContent;
+    searchDiv.classList.remove('active');
+}
+
+function createElement(elem, content, classy, adult) {
+    let element = document.createElement(elem);
+    element.textContent = content;
+    element.setAttribute("class", classy);
+    adult.appendChild(element);
+    return element;
+  }
+
+
+
 send.addEventListener('click', () => {
   if (search.value === '' && message.value === '') {
   window.alert('Please fill out both the user and message fields before sending.');
@@ -319,14 +372,34 @@ send.addEventListener('click', () => {
   message.value = '';
 });
 
-// ------------ Search and Filter-------------//
-const users = [ 
-    "Mohammed Giles","Eddie Cordova","Ulises Spence","Sabrina Lucas","Brady Charles","Brenda Hill","Chase Dawson","Graham House","Nikolas Sexton","Damarion Olsen","Nico Madden","Bronson Lozano","Sanai Dawson","Azul Waters","Jasper Whitehead","Kendall Combs","Niko Arnold","Sophia Kramer","Lorena Stuart","Parker Randall","Everett Kemp","Kenzie Garner","Kaelyn Hammond","Madelyn Hampton","Geovanni Green","Bridget Vaughn","Irene Anthony","Ariel Frazier","Edith Shah","Destinee Chapman","Kian Rosario","Chris Ford","Ben Bridges","Tucker Hebert","Parker Castillo","Barrett Greene","Jaylynn Snyder","Travis Stevens","Sophie Kaiser","Tyrell Molina", "Jasen Murphy", "Dale Byrd", "Dawn Wood", "Dan Oliver"];
+// ------------ SETTINGS & STORAGE-------------//
 
-const searchDiv = document.querySelector('.searchDiv')
-// search
-const suggestionsBox = document.querySelector('.suggestions')
+const emailSwitch = document.querySelector('#emailSwitch');
+const publicSwitch = document.querySelector('#publicSwitch');
+const timezone = document.querySelector('#timezone');
+const save = document.querySelector('#save');
 
-//  Search users and filter
+save.addEventListener('click', () => {
+    const emailValue = emailSwitch.checked;
+    const publicValue = publicSwitch.checked;
+    const timeValue = timezone.selectedIndex;
+    localStorage.setItem('email notification',emailValue);
+    localStorage.setItem('public notification',publicValue);
+    localStorage.setItem('time notification',timeValue);
+});
 
+function load() {
+    emailSwitch.checked = JSON.parse(localStorage.getItem('email notification'));
+    publicSwitch.checked = JSON.parse(localStorage.getItem('public notification'));
+    timezone.selectedIndex = JSON.parse(localStorage.getItem('time notification'));
+}
+load();
 
+const cancel = document.getElementById('cancel');
+
+cancel.addEventListener('click', () => {
+  localStorage.removeItem('email notification');
+  localStorage.removeItem('public notification');
+  localStorage.removeItem('time notification');
+  location.reload();
+});

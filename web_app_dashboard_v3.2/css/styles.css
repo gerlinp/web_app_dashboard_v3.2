@@ -424,21 +424,26 @@ h3 {
 /*                   MESSAGE                     */
 /* ============================================= */
 
+#message {
+  padding: 25px;
+}
 #message input,
 textarea,
 #send {
-  background-color: #121212;;
+  background-color: #121212;
   color: rgba(255,255,255, .87);
   font-weight: bolder;
-  width: 90%;
-  margin: 10px;
+  width: 100%;
+  margin: auto ;
   border-radius: 6px;
   height: 3rem;
+  ;
 }
 
-#message textarea {
+#message-field {
   height: 7.5rem;
   overflow: auto;
+  margin: 0 auto;
 }
 
 #send {
@@ -446,6 +451,12 @@ textarea,
 }
 
 
+.show .user {
+  border: white solid 1px;
+  width: 100%;
+  margin-top: -10px;
+  padding: 30px;
+}
 
 
 /* ============================================= */
