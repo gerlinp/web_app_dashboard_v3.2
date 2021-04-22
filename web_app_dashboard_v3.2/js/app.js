@@ -338,16 +338,16 @@ function makeSugggestionList(listOfUsers) {
         listOfUsers.push(search.value)
     }
     listOfUsers.forEach(name => {
-        let userLi = createElement('li', name, 'user' , suggestionsBox)
-        userLi.setAttribute('onclick', 'select(this)')
-    })
-}
+        let userLi = createElement('li', name, 'user' , suggestionsBox);
+        userLi.setAttribute('onclick', 'select(this)');
+    });
+};
 
-function select (element) {
+function select(element) {
     search.value = element.textContent;
-    searchDiv.classList.remove('active');
-}
-
+    searchDiv.classList.remove('show');
+  }
+  
 function createElement(elem, content, classy, adult) {
     let element = document.createElement(elem);
     element.textContent = content;
@@ -355,8 +355,6 @@ function createElement(elem, content, classy, adult) {
     adult.appendChild(element);
     return element;
   }
-
-
 
 send.addEventListener('click', () => {
   if (search.value === '' && message.value === '') {
